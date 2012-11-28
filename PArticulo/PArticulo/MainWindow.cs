@@ -1,5 +1,6 @@
 using Gtk;
 using Npgsql;
+using PArticulo;
 using Serpis.Ad;
 using System;
 using System.Collections.Generic;
@@ -48,5 +49,11 @@ public partial class MainWindow: Gtk.Window
 		listStore.Clear();
 	}
 
+	
+	protected void OnEditActionActivated (object sender, System.EventArgs e)
+	{
+		ArticuloView articuloView= new ArticuloView();
+		articuloView.Show();
+	}
 	
 }
