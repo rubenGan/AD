@@ -1,13 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench>
-    <Pads>
-      <Pad Id="ConnectionManagerPad">
-        <State expanded="True" selected="True">
-          <Node name="local_dbprueba" expanded="True" />
-        </State>
-      </Pad>
-    </Pads>
+  <MonoDevelop.Ide.Workbench ActiveDocument="PTreeView/MainWindow.cs">
+    <Files>
+      <File FileName="PTreeView/Main.cs" Line="1" Column="1" />
+      <File FileName="PTreeView/MainWindow.cs" Line="9" Column="3" />
+    </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
