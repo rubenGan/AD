@@ -25,6 +25,10 @@ namespace PArticulo
 			set{//TODO implementar...
 			}
 		}
+		
+		public Gtk.Action SaveAction{
+		get{return saveAction;}
+		}
 	}
 }
 

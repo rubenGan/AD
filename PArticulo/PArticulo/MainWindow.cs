@@ -72,7 +72,27 @@ public partial class MainWindow: Gtk.Window
 		articuloView.Show();
 		
 		
+		
 		dataReader.Close();
+		articuloView.SaveAction.Activated+=delegate {
+			Console.WriteLine("articuloView.SaveAction.Activated");
+			IDbCommand dbUpdateCommand = dbCommand.CreateCommand();
+			dbUpdateCommand.CommandText="update articulo set nombre=:nombre , precio=:precio where id=:id";
+			IDbDataParameter nombreParameter = dbUpdateCommand.CreateParameter();
+			IDbDataParameter precioParameter = dbUpdateCommand.CreateParameter();
+			IDbDataParameter idParameter = dbUpdateCommand.CreateParameter();
+			nombreParameter.ParameterName="nombre";
+			precioParameter.ParameterName="precio";
+			idParameter.ParameterName="id";
+			dbUpdateCommand.Parameters.Add (nombreParameter);
+			dbUpdateCommand.Parameters.Add (precioParameter);
+			dbUpdateCommand.Parameters.Add (idParameter);
+
+
+			
+			articuloView.Destroy();
+			
+		};
 	}
 	
 	private long getSelectedId(){
