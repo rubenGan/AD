@@ -1,10 +1,24 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="PGtkSerpis/TypeExtensions.cs">
+    <Files>
+      <File FileName="PArticulo/MainWindow.cs" Line="29" Column="20" />
+      <File FileName="PArticulo/ArticuloView.cs" Line="25" Column="29" />
+      <File FileName="PGtkSerpis/TypeExtensions.cs" Line="23" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ConnectionManagerPad">
-        <State expanded="True" selected="True">
-          <Node name="local_dbprueba" expanded="True" />
+        <State expanded="True">
+          <Node name="local_dbprueba" expanded="True">
+            <Node name="Tablas" expanded="True">
+              <Node name="prueba" selected="True">
+                <Node name="Columnas">
+                  <Option id="ShowDatabaseName" value="False" />
+                  <Option id="ShowSystemObjects" value="False" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
