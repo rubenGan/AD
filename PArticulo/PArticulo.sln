@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PArticulo", "PArticulo\PArticulo.csproj", "{12CAA1A1-48E6-4FE6-A219-1FAC568DA2F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PArticulo", "PArticulo\PArticulo.csproj", "{2B3F1FD4-1A03-4952-94F1-50284B2264CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGtkSerpis", "PGtkSerpis\PGtkSerpis.csproj", "{7526B619-FB25-4FEE-84DB-002AACF2E902}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGtkSerpis", "PGtkSerpis\PGtkSerpis.csproj", "{33F61607-2CE3-4227-B815-5BABBDBC981D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +11,14 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{12CAA1A1-48E6-4FE6-A219-1FAC568DA2F7}.Debug|x86.ActiveCfg = Debug|x86
-		{12CAA1A1-48E6-4FE6-A219-1FAC568DA2F7}.Debug|x86.Build.0 = Debug|x86
-		{12CAA1A1-48E6-4FE6-A219-1FAC568DA2F7}.Release|x86.ActiveCfg = Release|x86
-		{12CAA1A1-48E6-4FE6-A219-1FAC568DA2F7}.Release|x86.Build.0 = Release|x86
-		{7526B619-FB25-4FEE-84DB-002AACF2E902}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{7526B619-FB25-4FEE-84DB-002AACF2E902}.Debug|x86.Build.0 = Debug|Any CPU
-		{7526B619-FB25-4FEE-84DB-002AACF2E902}.Release|x86.ActiveCfg = Release|Any CPU
-		{7526B619-FB25-4FEE-84DB-002AACF2E902}.Release|x86.Build.0 = Release|Any CPU
+		{2B3F1FD4-1A03-4952-94F1-50284B2264CF}.Debug|x86.ActiveCfg = Debug|x86
+		{2B3F1FD4-1A03-4952-94F1-50284B2264CF}.Debug|x86.Build.0 = Debug|x86
+		{2B3F1FD4-1A03-4952-94F1-50284B2264CF}.Release|x86.ActiveCfg = Release|x86
+		{2B3F1FD4-1A03-4952-94F1-50284B2264CF}.Release|x86.Build.0 = Release|x86
+		{33F61607-2CE3-4227-B815-5BABBDBC981D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{33F61607-2CE3-4227-B815-5BABBDBC981D}.Debug|x86.Build.0 = Debug|Any CPU
+		{33F61607-2CE3-4227-B815-5BABBDBC981D}.Release|x86.ActiveCfg = Release|Any CPU
+		{33F61607-2CE3-4227-B815-5BABBDBC981D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = PArticulo\PArticulo.csproj

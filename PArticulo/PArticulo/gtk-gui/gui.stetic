@@ -73,7 +73,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="PArticulo.ArticuloView" design-size="400 300">
+  <widget class="Gtk.Window" id="PArticulo.ArticuloView" design-size="310 221">
     <action-group name="Default">
       <action id="saveAction">
         <property name="Type">Action</property>
@@ -108,18 +108,9 @@
           <widget class="Gtk.Table" id="table1">
             <property name="MemberName" />
             <property name="NRows">3</property>
-            <property name="NColumns">3</property>
+            <property name="NColumns">2</property>
             <property name="RowSpacing">6</property>
             <property name="ColumnSpacing">6</property>
-            <child>
-              <placeholder />
-            </child>
-            <child>
-              <placeholder />
-            </child>
-            <child>
-              <placeholder />
-            </child>
             <child>
               <widget class="Gtk.ComboBox" id="comboBoxCategoria">
                 <property name="MemberName" />
@@ -255,9 +246,6 @@
             <property name="Expand">False</property>
             <property name="Fill">False</property>
           </packing>
-        </child>
-        <child>
-          <placeholder />
         </child>
       </widget>
     </child>
