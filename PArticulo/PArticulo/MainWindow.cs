@@ -115,4 +115,28 @@ public partial class MainWindow: Gtk.Window
 		dbCommand.Parameters.Add (dbDataParameter);
 		}
 	
+	protected void OnAddActionActivated (object sender, System.EventArgs e)
+	{
+		ArticuloView articuloView = new ArticuloView();
+		articuloView.Show ();
+		articuloView.SaveAction.Activated += delegate {
+			IDbCommand dbInsertCommand = dbConnection.CreateCommand ();
+			dbInsertCommand.CommandText = "insert into articulo(nombre, precio) values (nombre=:nombre, precio=:precio)";
+		
+			
+			
+			AddParameter(dbInsertCommand,"nombre",articuloView.Nombre);
+			AddParameter(dbInsertCommand,"precio",articuloView.Precio);
+			
+			
+			
+			dbInsertCommand.ExecuteNonQuery ();
+			
+			articuloView.Destroy ();
+			
+		
+		};
+		
+	}
+	
 }

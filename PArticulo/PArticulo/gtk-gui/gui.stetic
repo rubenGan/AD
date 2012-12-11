@@ -6,8 +6,8 @@
   </configuration>
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <widget-library name="../bin/Debug/PArticulo.exe" internal="true" />
     <widget-library name="../../PGtkSerpis/bin/Debug/PGtkSerpis.dll" />
+    <widget-library name="../bin/Debug/PArticulo.exe" internal="true" />
   </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="400 300">
     <action-group name="Default">
@@ -25,6 +25,13 @@
         <property name="StockId">gtk-edit</property>
         <signal name="Activated" handler="OnEditActionActivated" />
       </action>
+      <action id="addAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">_Añadir</property>
+        <property name="ShortLabel" translatable="yes">_Añadir</property>
+        <property name="StockId">gtk-add</property>
+        <signal name="Activated" handler="OnAddActionActivated" />
+      </action>
     </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
@@ -39,6 +46,7 @@
             <property name="MemberName" />
             <property name="ShowArrow">False</property>
             <node name="toolbar1" type="Toolbar">
+              <node type="Toolitem" action="addAction" />
               <node type="Toolitem" action="clearAction" />
               <node type="Toolitem" action="editAction" />
             </node>
