@@ -13,8 +13,9 @@ namespace PArticulo
 			this.Build ();
 			
 			dbConnection = ApplicationContext.Instance.DbConnection;
-			
+			if(id !=-1){
 			IDbCommand dbCommand = dbConnection.CreateCommand();
+			
 			dbCommand.CommandText = string.Format ("select * from articulo where id={0}", id);
 			
 			IDataReader dataReader = dbCommand.ExecuteReader ();
@@ -37,9 +38,29 @@ namespace PArticulo
 	
 				dbUpdateCommand.ExecuteNonQuery ();
 				
+				
 				Destroy ();
+			};
+			}else if(id==-1){
+				
+				saveAction.Activated += delegate {
+				Console.WriteLine("saveAction.Activated Nuevo");
+				
+				IDbCommand dbUpdateCommand = dbConnection.CreateCommand ();
+				dbUpdateCommand.CommandText = "insert into articulo (nombre,precio) values (:nombre,:precio)";
+				
+				DbCommandExtensions.AddParameter (dbUpdateCommand, "nombre", entryNombre.Text);
+				DbCommandExtensions.AddParameter (dbUpdateCommand, "precio", Convert.ToDecimal (spinButtonPrecio.Value ));
+				
+	
+				dbUpdateCommand.ExecuteNonQuery ();
+				
+				
+				Destroy ();
+			
+			
 			};
 		}
 	}
 }
-
+}

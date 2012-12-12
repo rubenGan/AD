@@ -14,7 +14,7 @@ public partial class MainWindow: Gtk.Window
 	{
 		Build ();
 		
-		string connectionString = "Server=localhost;Database=dbprueba;User Id=dbprueba;Password=sistemas";
+		string connectionString = "Server=localhost;Database=prueba;User Id=dbprueba;Password=sistemas";
 		ApplicationContext.Instance.DbConnection = new NpgsqlConnection(connectionString);
 		dbConnection = ApplicationContext.Instance.DbConnection;
 		dbConnection.Open ();
@@ -64,4 +64,12 @@ public partial class MainWindow: Gtk.Window
 		ListStore listStore = (ListStore)treeView.Model;
 		return long.Parse (listStore.GetValue (treeIter, 0).ToString ()); 
 	}
+
+	protected void OnAddActionActivated (object sender, System.EventArgs e)
+	{
+		ArticuloView articuloView = new ArticuloView (-1);
+		articuloView.Show ();
+	}
+
+
 }
