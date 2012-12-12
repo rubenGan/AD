@@ -72,4 +72,14 @@ public partial class MainWindow: Gtk.Window
 	}
 
 
+	protected void OnRemoveActionActivated (object sender, System.EventArgs e)
+	{
+		IDbCommand dbDeleteCommand = dbConnection.CreateCommand ();
+	   dbDeleteCommand.CommandText = "delete from articulo where id=:id;";
+		
+		DbCommandExtensions.AddParameter (dbDeleteCommand, "id", getSelectedId());
+	
+				dbDeleteCommand.ExecuteNonQuery ();
+	}
+	
 }

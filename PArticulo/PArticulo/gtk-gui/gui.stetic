@@ -32,6 +32,13 @@
         <property name="StockId">gtk-add</property>
         <signal name="Activated" handler="OnAddActionActivated" />
       </action>
+      <action id="removeAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">_Quitar</property>
+        <property name="ShortLabel" translatable="yes">_Quitar</property>
+        <property name="StockId">gtk-remove</property>
+        <signal name="Activated" handler="OnRemoveActionActivated" />
+      </action>
     </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
@@ -48,6 +55,7 @@
             <node name="toolbar1" type="Toolbar">
               <node type="Toolitem" action="clearAction" />
               <node type="Toolitem" action="addAction" />
+              <node type="Toolitem" action="removeAction" />
               <node type="Toolitem" action="editAction" />
             </node>
           </widget>

@@ -13,8 +13,20 @@ namespace PArticulo
 			this.Build ();
 			
 			dbConnection = ApplicationContext.Instance.DbConnection;
-			if(id !=-1){
-			IDbCommand dbCommand = dbConnection.CreateCommand();
+			if(id !=-1)
+			{
+			editar(id);
+				
+			}
+			else if(id==-1)
+			{
+				nuevo ();
+		}
+			
+	}
+		private void editar(long id){
+		
+		IDbCommand dbCommand = dbConnection.CreateCommand();
 			
 			dbCommand.CommandText = string.Format ("select * from articulo where id={0}", id);
 			
@@ -41,8 +53,11 @@ namespace PArticulo
 				
 				Destroy ();
 			};
-			}else if(id==-1){
-				
+		}
+		
+		private void nuevo(){
+			
+			
 				saveAction.Activated += delegate {
 				Console.WriteLine("saveAction.Activated Nuevo");
 				
@@ -60,7 +75,7 @@ namespace PArticulo
 			
 			
 			};
+		
 		}
-	}
 }
 }
