@@ -61,7 +61,6 @@
             <property name="ShowArrow">False</property>
             <node name="toolbar1" type="Toolbar">
               <node type="Toolitem" action="refreshAction" />
-              <node type="Toolitem" action="clearAction" />
               <node type="Toolitem" action="addAction" />
               <node type="Toolitem" action="removeAction" />
               <node type="Toolitem" action="editAction" />

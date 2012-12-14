@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="PArticulo/ArticuloView.cs">
     <Files>
-      <File FileName="PArticulo/MainWindow.cs" Line="77" Column="62" />
-      <File FileName="PArticulo/ArticuloView.cs" Line="56" Column="4" />
+      <File FileName="PArticulo/ArticuloView.cs" Line="43" Column="4" />
+      <File FileName="PArticulo/MainWindow.cs" Line="68" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

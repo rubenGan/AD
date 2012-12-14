@@ -40,12 +40,7 @@ public partial class MainWindow: Gtk.Window
 		a.RetVal = true;
 	}
 
-	protected void OnClearActionActivated (object sender, System.EventArgs e)
-	{
-		ListStore listStore = (ListStore)treeView.Model;
-		listStore.Clear ();
-	}
-
+	
 	protected void OnEditActionActivated (object sender, System.EventArgs e)
 	{
 		long id = getSelectedId();
@@ -55,7 +50,7 @@ public partial class MainWindow: Gtk.Window
 		
 		ArticuloView articuloView = new ArticuloView( id );
 		articuloView.Show ();
-		}
+	}
 	
 	
 	private long getSelectedId() {
@@ -70,6 +65,8 @@ public partial class MainWindow: Gtk.Window
 	{
 		ArticuloView articuloView = new ArticuloView (-1);
 		articuloView.Show ();
+		
+		
 	}
 
 
@@ -81,6 +78,7 @@ public partial class MainWindow: Gtk.Window
 		DbCommandExtensions.AddParameter (dbDeleteCommand, "id", getSelectedId());
 	
 				dbDeleteCommand.ExecuteNonQuery ();
+		refresh ();
 	}
 		
 	private void refresh()
