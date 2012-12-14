@@ -51,6 +51,7 @@ namespace PArticulo
 				dbUpdateCommand.ExecuteNonQuery ();
 				
 				
+				
 				Destroy ();
 			};
 		}
@@ -69,7 +70,9 @@ namespace PArticulo
 				
 	
 				dbUpdateCommand.ExecuteNonQuery ();
+								
 				
+
 				
 				Destroy ();
 			

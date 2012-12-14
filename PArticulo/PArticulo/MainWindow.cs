@@ -30,10 +30,6 @@ public partial class MainWindow: Gtk.Window
 		TreeViewExtensions.Fill (treeView, dataReader);
 		dataReader.Close ();
 		
-		dataReader = dbCommand.ExecuteReader ();
-		TreeViewExtensions.Fill (treeView, dataReader);
-		dataReader.Close ();
-		
 	}
 	
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
@@ -53,9 +49,14 @@ public partial class MainWindow: Gtk.Window
 	protected void OnEditActionActivated (object sender, System.EventArgs e)
 	{
 		long id = getSelectedId();
+		
+		
+
+		
 		ArticuloView articuloView = new ArticuloView( id );
 		articuloView.Show ();
-	}
+		}
+	
 	
 	private long getSelectedId() {
 		TreeIter treeIter;
@@ -80,6 +81,26 @@ public partial class MainWindow: Gtk.Window
 		DbCommandExtensions.AddParameter (dbDeleteCommand, "id", getSelectedId());
 	
 				dbDeleteCommand.ExecuteNonQuery ();
+	}
+		
+	private void refresh()
+	{
+		IDbCommand dbCommand = ApplicationContext.Instance.DbConnection.CreateCommand ();
+		dbCommand.CommandText =
+		"select a.id, a.nombre, a.precio, c.nombre as categoria " +
+		"from articulo a left join categoria c " +
+		"on a.categoria = c.id";
+
+		IDataReader dataReader = dbCommand.ExecuteReader ();
+		TreeViewExtensions.Fill (treeView, dataReader);
+		dataReader.Close ();
+	}
+
+
+	protected void OnRefreshActionActivated (object sender, System.EventArgs e)
+	{
+	refresh();
+
 	}
 	
 }
