@@ -12,6 +12,7 @@ namespace PArticulo
 		{
 			this.Build ();
 			
+			
 			dbConnection = ApplicationContext.Instance.DbConnection;
 			if(id !=-1)
 			{
@@ -52,6 +53,7 @@ namespace PArticulo
 				DbCommandExtensions.AddParameter (dbUpdateCommand, "nombre", entryNombre.Text);
 				DbCommandExtensions.AddParameter (dbUpdateCommand, "precio", Convert.ToDecimal (spinButtonPrecio.Value ));
 				DbCommandExtensions.AddParameter (dbUpdateCommand, "id", id);
+				fillComboBox();
 	
 				dbUpdateCommand.ExecuteNonQuery ();
 				
@@ -72,6 +74,9 @@ namespace PArticulo
 				
 				DbCommandExtensions.AddParameter (dbUpdateCommand, "nombre", entryNombre.Text);
 				DbCommandExtensions.AddParameter (dbUpdateCommand, "precio", Convert.ToDecimal (spinButtonPrecio.Value ));
+				fillComboBox();
+				
+				
 				
 	
 				dbUpdateCommand.ExecuteNonQuery ();
@@ -85,5 +90,30 @@ namespace PArticulo
 			};
 		
 		}
+		
+		private void fillComboBox(){
+		CellRenderer cellRenderer = new CellRendererText();
+		comboBoxCategoria.PackStart(cellRenderer,false); //expand false
+		comboBoxCategoria.AddAttribute(cellRenderer,"text",1);
+		
+		ListStore listStore = new ListStore(typeof(string),typeof(string));
+		comboBoxCategoria.Model=listStore;
+		
+		
+		
+		IDbCommand dbCommand= dbConnection.CreateCommand();
+		dbCommand.CommandText="select id,nombre from categoria";
+		
+		IDataReader dataReader = dbCommand.ExecuteReader();
+	
+		while(dataReader.Read ())
+		listStore.AppendValues(dataReader["id"].ToString(),dataReader["nombre"].ToString());
+		
+		dataReader.Close();
+		
+		
+	
+	
+	}
 }
 }
