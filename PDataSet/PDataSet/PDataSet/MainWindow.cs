@@ -29,6 +29,25 @@ public partial class MainWindow: Gtk.Window
 		dbDataAdapter.Fill(dataSet);
 		
 		Console.WriteLine("Tables.Count={0}",dataSet.Tables.Count);
+		foreach (DataTable dataTable in dataSet.Tables)
+			show (dataTable);
+		
+	}
+	
+	private void show(DataTable datatable){
+		
+		foreach(DataColumn dataColumn in datatable.Columns)
+			Console.WriteLine("Column.Name={0}",dataColumn.ColumnName);
+		
+		foreach(DataRow dataRow in datatable.Rows){
+			foreach(DataColumn dataColumn in datatable.Columns)
+				Console.Write(" [{0}={1}] ",dataColumn.ColumnName,dataRow[dataColumn]);
+			
+			Console.WriteLine();
+		}
+			
+		
+	
 	}
 
 }
