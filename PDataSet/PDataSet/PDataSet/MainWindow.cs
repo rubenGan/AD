@@ -18,10 +18,12 @@ public partial class MainWindow: Gtk.Window
 
 	protected void OnExecuteActionActivated (object sender, System.EventArgs e)
 	{
-		IDbConnection dbConnection = new NpgsqlConnection("Server=localhost;Database=prueba;User Id=dbprueba; Password=sistemas");
-		IDbCommand selectCommand = dbConnection.CreateCommand();	
-		selectCommand.CommandText ="select * from articulo";
-		IDbDataAdapter dbDataAdapter = new NpgsqlDataAdapter ();
+		NpgsqlConnection dbConnection = new NpgsqlConnection("Server=localhost;Database=prueba;User Id=dbprueba; Password=sistemas");
+		NpgsqlCommand selectCommand = dbConnection.CreateCommand();	
+		selectCommand.CommandText ="select * from categoria";
+		NpgsqlDataAdapter dbDataAdapter = new NpgsqlDataAdapter ();
+		
+		new NpgsqlCommandBuilder(dbDataAdapter);
 		dbDataAdapter.SelectCommand=selectCommand;
 				
 		DataSet dataSet = new DataSet();
@@ -32,12 +34,20 @@ public partial class MainWindow: Gtk.Window
 		foreach (DataTable dataTable in dataSet.Tables)
 			show (dataTable);
 		
+		DataRow dataRow =dataSet.Tables[0].Rows[0];
+		dataRow["nombre"]=DateTime.Now.ToString ();
+		Console.WriteLine("Tabla con los cambios");
+		show (dataSet.Tables[0]);
+		
+		
+		dbDataAdapter.Update(dataSet.Tables[0]);
+		
 	}
 	
 	private void show(DataTable datatable){
 		
-		foreach(DataColumn dataColumn in datatable.Columns)
-			Console.WriteLine("Column.Name={0}",dataColumn.ColumnName);
+		/*foreach(DataColumn dataColumn in datatable.Columns)
+			Console.WriteLine("Column.Name={0}",dataColumn.ColumnName);*/
 		
 		foreach(DataRow dataRow in datatable.Rows){
 			foreach(DataColumn dataColumn in datatable.Columns)
