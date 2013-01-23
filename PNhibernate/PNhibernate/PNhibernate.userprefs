@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PNhibernate/Main.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PNhibernate/MainWindow.cs">
     <Files>
-      <File FileName="PNhibernate/Main.cs" Line="1" Column="1" />
+      <File FileName="PNhibernate/Main.cs" Line="3" Column="1" />
+      <File FileName="PNhibernate/MainWindow.cs" Line="18" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

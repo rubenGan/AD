@@ -58,7 +58,7 @@
     </Reference>
     <Reference Include="Mono.Posix" />
     <Reference Include="NHibernate">
-      <HintPath>..\..\nhibernate\NHibernate.dll</HintPath>
+      <HintPath>..\nhibernate\NHibernate.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
