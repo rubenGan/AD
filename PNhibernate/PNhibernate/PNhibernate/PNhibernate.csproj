@@ -60,6 +60,9 @@
     <Reference Include="NHibernate">
       <HintPath>..\nhibernate\NHibernate.dll</HintPath>
     </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\nhibernate\Npgsql.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
