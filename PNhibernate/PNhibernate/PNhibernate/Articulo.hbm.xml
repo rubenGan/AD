@@ -16,7 +16,12 @@
 <property name="Nombre" />
 <property name="Precio" />
 <!-- MAPEAR CATEGORIA -->	
-http://nhforge.org/doc/nh/en/index.html#mapping-declaration-manytoone		
+<many-to-one name="Categoria"
+			column="Categoria" 
+			class="Categoria" 
+		     />
+				
+						
 	
 	</class>
 

@@ -31,8 +31,8 @@ public partial class MainWindow: Gtk.Window
 	
 	private void loadArticulo(ISessionFactory sessionFactory){
 		using(ISession session = sessionFactory.OpenSession()){
-			Articulo articulo=(Articulo)session.Load (typeof(Articulo),2L);
-			Console.WriteLine("Articulo ID={0} Nombre={1} Precio={2}",articulo.Id,articulo.Nombre, articulo.Precio);
+			Articulo articulo=(Articulo)session.Load (typeof(Articulo),2L);				  
+			Console.WriteLine("Articulo ID={0} Nombre={1} Precio={2} Categoria={3}",articulo.Id,articulo.Nombre, articulo.Precio,articulo.Categoria.Nombre);
 		}
 	}
 	private void updateCategoria(ISessionFactory sessionFactory){
